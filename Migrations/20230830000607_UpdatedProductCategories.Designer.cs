@@ -3,6 +3,7 @@ using System;
 using BangazonBE_SB;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BangazonBE_SB.Migrations
 {
     [DbContext(typeof(BangazonDBContext))]
-    partial class BangazonDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230830000607_UpdatedProductCategories")]
+    partial class UpdatedProductCategories
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

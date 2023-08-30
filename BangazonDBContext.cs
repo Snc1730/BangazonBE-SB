@@ -6,12 +6,12 @@ namespace BangazonBE_SB
     public class BangazonDBContext : DbContext
     {
         public DbSet<User> Users { get; set; }
-        public DbSet<Users_PaymentTypes> UserPaymentTypes { get; set; }
+        public DbSet<Users_PaymentTypes> Users_PaymentTypes { get; set; }
         public DbSet<Products> Products { get; set; }
         public DbSet<PaymentTypes> PaymentTypes { get; set; }
         public DbSet<OrderStatuses> OrderStatuses { get; set; }
         public DbSet<Orders> Orders { get; set; }
-        public DbSet<ProductCategories> Categories { get; set; }
+        public DbSet<ProductCategories> ProductCategories { get; set; }
 
         public BangazonDBContext(DbContextOptions<BangazonDBContext> context) : base(context)
         {
@@ -47,9 +47,9 @@ namespace BangazonBE_SB
             // Seed data for ProductCategories
             modelBuilder.Entity<ProductCategories>().HasData(new ProductCategories[]
             {
-                new ProductCategories {ProductCatagoryId = 1, Name = "Electronics"},
-                new ProductCategories {ProductCatagoryId = 2, Name = "Clothing"},
-                new ProductCategories {ProductCatagoryId = 3, Name = "Furniture"}
+                new ProductCategories {ProductCategoryId = 1, Name = "Electronics"},
+                new ProductCategories {ProductCategoryId = 2, Name = "Clothing"},
+                new ProductCategories {ProductCategoryId = 3, Name = "Furniture"}
             });
 
             // Seed data for Products

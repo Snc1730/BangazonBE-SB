@@ -35,9 +35,39 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/api/products", (BangazonDBContext db) =>
+app.MapGet("/api/Orders", (BangazonDBContext db) =>
+{
+    return db.Orders.ToList();
+});
+
+app.MapGet("/api/OrderStatuses", (BangazonDBContext db) =>
+{
+    return db.OrderStatuses.ToList();
+});
+
+app.MapGet("/api/PaymentTypes", (BangazonDBContext db) =>
+{
+    return db.PaymentTypes.ToList();
+});
+
+app.MapGet("/api/ProductCategories", (BangazonDBContext db) =>
+{
+    return db.ProductCategories.ToList();
+});
+
+app.MapGet("/api/Products", (BangazonDBContext db) =>
 {
     return db.Products.ToList();
+});
+
+app.MapGet("/api/Users", (BangazonDBContext db) =>
+{
+    return db.Users.ToList();
+});
+
+app.MapGet("/api/Users_PaymentTypes", (BangazonDBContext db) =>
+{
+    return db.Users_PaymentTypes.ToList();
 });
 
 app.Run();
